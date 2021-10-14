@@ -1,3 +1,0 @@
-define LIB_MAP ( $LIB_MAP \
-, ../../../lab0/orange.v => orange \
-)

@@ -1,3 +1,0 @@
-SOFTINCLUDE /cad/XCELIUM1909/tools/inca/files/cds.lib
-include ../../../cds.lib
-define worklib ../worklib
