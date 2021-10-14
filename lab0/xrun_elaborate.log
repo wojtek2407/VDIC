@@ -1,0 +1,67 @@
+TOOL:	xrun	19.09-s003: Started on Oct 07, 2021 at 17:59:21 CEST
+xrun
+	-elaborate
+	-l xrun_elaborate.log
+	-F tb.f
+		-v orange.v
+		orange_tb.v
+	-v93
+	+nowarnDSEM2009
+	+nowarnDSEMEL
+	+nowarnCGDEFN
+	-xmlibdirname INCA_libs_gui
+	+access+r
+	+gui
+	+overwrite
+	-nocopyright
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xrun: *W,DLCVAR (/home/student/wmrzyglod/cds.lib,1): cds.lib Invalid environment variable ''.
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xrun: *W,DLCVAR (/home/student/wmrzyglod/cds.lib,1): cds.lib Invalid environment variable ''.
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xrun: *W,DLCVAR (/home/student/wmrzyglod/cds.lib,1): cds.lib Invalid environment variable ''.
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xrun: *W,DLCVAR (/home/student/wmrzyglod/cds.lib,1): cds.lib Invalid environment variable ''.
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xrun: *W,DLCVAR (/home/student/wmrzyglod/cds.lib,1): cds.lib Invalid environment variable ''.
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xrun: *W,DLCVAR (/home/student/wmrzyglod/cds.lib,1): cds.lib Invalid environment variable ''.
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xrun: *W,DLCVAR (/home/student/wmrzyglod/cds.lib,1): cds.lib Invalid environment variable ''.
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xrun: *W,DLCVAR (/home/student/wmrzyglod/cds.lib,1): cds.lib Invalid environment variable ''.
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xrun: *W,DLCVAR (/home/student/wmrzyglod/cds.lib,1): cds.lib Invalid environment variable ''.
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xmelab: *W,DLCVAR (/home/student/wmrzyglod/cds.lib,1): cds.lib Invalid environment variable ''.
+		Caching library 'orange' ....... Done
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		orange_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xmvlog_cg: *W,DLCVAR (/home/student/wmrzyglod/cds.lib,1): cds.lib Invalid environment variable ''.
+		orange.orange:v <0x09f29125>
+			streams:   0, words:     0
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		            Instances  Unique
+		Modules:            2       2
+		Scalar wires:       2       -
+		Cont. assignments:  0       1
+	Writing initial simulation snapshot: worklib.orange_tb:v
+TOOL:	xrun	19.09-s003: Exiting on Oct 07, 2021 at 17:59:21 CEST  (total: 00:00:00)

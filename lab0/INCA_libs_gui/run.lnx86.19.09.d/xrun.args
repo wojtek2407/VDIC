@@ -1,0 +1,19 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-elaborate
+-l
+xrun_elaborate.log
+-F
+tb.f
+-v93
++nowarnDSEM2009
++nowarnDSEMEL
++nowarnCGDEFN
+-xmlibdirname
+INCA_libs_gui
++access+r
++gui
++overwrite
+-nocopyright

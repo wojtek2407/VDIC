@@ -1,0 +1,7 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-VFILE
+./lab0/orange.v
+-sv

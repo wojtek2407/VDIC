@@ -1,0 +1,32 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
++nowarnDSEM2009
++nowarnDSEMEL
++nowarnCGDEFN
++access+r
++gui
+-amsdlibdir
+./INCA_libs_gui/AMSD
+-V93
+-NOWARN
+DSEM2009
+-NOWARN
+DSEMEL
+-NOWARN
+CGDEFN
+-ACCESS
++r
+-NOCOPYRIGHT
+-MESSAGES
+-XLMODE
+./INCA_libs_gui/run.lnx86.19.09.d
+-RUNMODE
+-CDSLIB
+./INCA_libs_gui/run.lnx86.19.09.d/cds.lib
+-HDLVAR
+./INCA_libs_gui/run.lnx86.19.09.d/hdl.var
+-WORK
+worklib
+-HASXLMODE

@@ -1,0 +1,66 @@
+xrun: 19.09-s003: (c) Copyright 1995-2019 Cadence Design Systems, Inc.
+TOOL:	xrun	19.09-s003: Started on Oct 07, 2021 at 17:54:28 CEST
+xrun
+	+elaborate
+	+sv
+	-f /home/student/wmrzyglod/VDIC/.dvt/lab0.build
+		-F ./lab0/orange_tb.f
+			-v orange.v
+			orange_tb.v
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xrun: *W,DLCVAR (../cds.lib,1): cds.lib Invalid environment variable ''.
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xrun: *W,DLCVAR (../cds.lib,1): cds.lib Invalid environment variable ''.
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xrun: *W,DLCVAR (../cds.lib,1): cds.lib Invalid environment variable ''.
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xrun: *W,DLCVAR (../cds.lib,1): cds.lib Invalid environment variable ''.
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xrun: *W,DLCVAR (../cds.lib,1): cds.lib Invalid environment variable ''.
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xmvlog: *W,DLCVAR (../cds.lib,1): cds.lib Invalid environment variable ''.
+file: ./lab0/orange_tb.v
+	module worklib.orange_tb:v
+		errors: 0, warnings: 0
+file: ./lab0/orange.v
+	module orange.orange:v
+		errors: 0, warnings: 0
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 1
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xrun: *W,DLCVAR (../cds.lib,1): cds.lib Invalid environment variable ''.
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xrun: *W,DLCVAR (../cds.lib,1): cds.lib Invalid environment variable ''.
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xmelab: *W,DLCVAR (../cds.lib,1): cds.lib Invalid environment variable ''.
+		Caching library 'orange' ....... Done
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		orange_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+INCLUDE $PDK_DIR/cds/cds.lib
+|
+xmvlog_cg: *W,DLCVAR (../cds.lib,1): cds.lib Invalid environment variable ''.
+		orange.orange:v <0x518e2386>
+			streams:   0, words:     0
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		            Instances  Unique
+		Modules:            2       2
+		Scalar wires:       1       -
+		Cont. assignments:  0       1
+	Writing initial simulation snapshot: worklib.orange_tb:v
+TOOL:	xrun	19.09-s003: Exiting on Oct 07, 2021 at 17:54:29 CEST  (total: 00:00:01)

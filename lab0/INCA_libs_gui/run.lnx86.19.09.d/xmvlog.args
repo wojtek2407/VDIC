@@ -1,0 +1,30 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-XLMODE
+./INCA_libs_gui/run.lnx86.19.09.d
+-RUNMODE
+-amsdlibdir
+./INCA_libs_gui/AMSD
+-VFILE
+./orange.v
+./orange_tb.v
+-NOWARN
+DSEM2009
+-NOWARN
+DSEMEL
+-NOWARN
+CGDEFN
+-XMLIBDIRNAME
+INCA_libs_gui
+-NOCOPYRIGHT
+-CDSLIB
+./INCA_libs_gui/run.lnx86.19.09.d/cdsrun.lib
+-HDLVAR
+./INCA_libs_gui/run.lnx86.19.09.d/hdlrun.var
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+./INCA_libs_gui/run.lnx86.19.09.d/xllibs
+-ALLOWUNBOUND
