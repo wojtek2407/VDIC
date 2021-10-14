@@ -1,0 +1,6 @@
+*.log
+*.history
+INCA_libs
+INCA_libs_gui
+.simvision
+*.key
