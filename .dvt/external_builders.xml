@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configurations>
+    <configuration ATTR_AUTO_COMMAND="" ATTR_BUILDER_ENABLED="true" ATTR_BUILDER_NAME="irun_Verilog_Builder" ATTR_CLEAN_COMMAND="/bin/bash -c &quot;rm -rf xrun.log ${project_loc}/INCA_libs&quot;" ATTR_FILTERS_KIND="IUS," ATTR_FULL_COMMAND="/bin/bash -c &quot;xrun +elaborate +sv -f ${dvt_current_build_file}&quot;" ATTR_WORKING_DIRECTORY="${workspace_loc:/${project_name}}">
+        <patterns/>
+        <environment_variables ATTR_APPEND_ENVIRONMENT_VARIABLES="true"/>
+    </configuration>
+</configurations>
