@@ -1,4 +1,6 @@
 -v mtm_Alu.vp
--v crc4.v
+-v crc.v
+
+//+define+DEBUG
 
 alu_tb.sv

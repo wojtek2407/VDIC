@@ -5,3 +5,5 @@ INCA_libs_gui
 .simvision
 *.key
 xcelium.d
+*.diag
+*.shm
