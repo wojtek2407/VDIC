@@ -133,10 +133,10 @@ module alu_tb();
         integer i;
         begin
             wait (sout === 1'b0);
-            @(posedge clk);
-            @(posedge clk) transfer_type = transfer_type_t'(sout);
+            @(negedge clk);
+            @(negedge clk) transfer_type = transfer_type_t'(sout);
             for (i = 0; i < 8; i = i + 1) 
-                @(posedge  clk) data[7-i] = sout; // MSB frist
+                @(negedge clk) data[7-i] = sout; // MSB frist
             wait (sout === 1'b1);
         end
     endtask
@@ -284,9 +284,9 @@ module alu_tb();
             end   
             if (reset_alu_after) reset_alu();           
  
-        // print coverage after each loop
-        // $strobe("%0t coverage: %.4g\%",$time, $get_coverage());
-        // if($get_coverage() == 100) break;
+//         print coverage after each loop
+//         $strobe("%0t coverage: %.4g\%",$time, $get_coverage());
+//         if($get_coverage() == 100) break;
         end
         $finish;
     end : tester
@@ -316,9 +316,6 @@ module alu_tb();
         );
         bit signed [31:0] ret;
         bit [32:0] carry_check;
-        `ifdef DEBUG
-        $display("%0t DEBUG: get_expected(%0d,%0d,%0d)",$time, A, B, op_set);
-        `endif
         case(op_set)
             and_op : ret = A & B;
             or_op :  ret = A | B;
@@ -350,9 +347,6 @@ module alu_tb();
             operation_t op_set
         );
         bit signed [31:0] ret;
-        `ifdef DEBUG
-        $display("%0t DEBUG: get_expected(%0d,%0d,%0d)",$time, A, B, op_set);
-        `endif
         case(op_set)
             and_op : ret = A & B;
             or_op :  ret = A | B;
