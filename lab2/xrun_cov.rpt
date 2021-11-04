@@ -1,0 +1,25 @@
+*I,RUNLD: Successfully loaded run /home/student/wmrzyglod/VDIC/lab2/cov_work/scope/lab01.
+*I,MERGL1: Merging Simulation Coverage ...
+----------------------------
+*I,MERGL1: Preparing target model ...
+*I,MERGL1: Reading model of primary run (cov_work/scope/lab01) as initial model: cov_work/scope/icc_5df8b924_0f1b23f7.ucm
+*I,MERGL1: Target model generated successfully.
+*I,MERGL1: Projecting Simulation ucd data into the target model ...
+*I,MERGL2:   cov_work/scope/lab01:
+*I,MERGL3:       Data is projected in to the target model.
+*I,MERGL1: Writing output database cov_work/scope/merged_results:
+*I,MERGL2:   Model: cov_work/scope/merged_results/icc_5df8b924_0f1b23f7.ucm
+*I,MERGL2:   Data : cov_work/scope/merged_results/icc_5df8b924_0f1b23f7.ucd
+*I,MERGL1: No Specman coverage databases found in the runs.
+Total conflicts during target model creation: 0
+Total items not merged                      : 0
+Total runs not considered during target model creation: 0
+Total runs not merged                                 : 0
+*I,RUNLD: Successfully loaded run /home/student/wmrzyglod/VDIC/lab2/cov_work/scope/merged_results.
+*W,REPDEP: This is a legacy report and no future enhancement is planned for this report. It is recommended that you use the 'report_metrics' command and generate a dynamic report.
+name                                     Overall Average      Overall Covered      Code Average         Code Covered         Fsm Average          Fsm Covered          Functional Average   Functional Covered   
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+alu_tb                                   99.34%               98.80% (413/418/29)  98.68%               98.69% (378/383/29)  n/a                  n/a                  100.00%              100.00% (35/35)      
+|--u_mtm_Alu                             98.21%               98.21% (55/56)       98.21%               98.21% (55/56)       n/a                  n/a                  n/a                  n/a                  
+|--crc4                                  97.26%               94.53% (294/311)     97.26%               94.53% (294/311)     n/a                  n/a                  n/a                  n/a                  
+|--crc3                                  97.41%               94.85% (129/136)     97.41%               94.85% (129/136)     n/a                  n/a                  n/a                  n/a                  
