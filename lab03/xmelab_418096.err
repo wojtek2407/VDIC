@@ -1,0 +1,36 @@
+csi-xmelab - CSI: Command line:
+xmelab
+    -f /home/student/wmrzyglod/VDIC/lab03/INCA_libs/run.lnx86.19.09.d/xmelab.args
+        +nowarnDSEM2009
+        +nowarnDSEMEL
+        +nowarnCGDEFN
+        -amsdlibdir ./INCA_libs/AMSD
+        -V93
+        -NOWARN DSEM2009
+        -NOWARN DSEMEL
+        -NOWARN CGDEFN
+        -NOCOPYRIGHT
+        -MESSAGES
+        -XLMODE ./INCA_libs/run.lnx86.19.09.d
+        -RUNMODE
+        -CDSLIB ./INCA_libs/run.lnx86.19.09.d/cds.lib
+        -HDLVAR ./INCA_libs/run.lnx86.19.09.d/hdl.var
+        -WORK worklib
+        -HASXLMODE
+    -CHECK_VERSION TOOL:	xrun	19.09-s003
+    -LOG_FD 4
+
+csi-xmelab - CSI: *F,INTERR: INTERNAL EXCEPTION
+-----------------------------------------------------------------
+The tool has encountered an unexpected condition and must exit.
+Contact Cadence Design Systems customer support about this
+problem and provide enough information to help us reproduce it,
+including the logfile that contains this error message.
+  TOOL:	xmelab	19.09-s003
+  HOSTNAME: cadence212
+  OPERATING SYSTEM: Linux 2.6.32-754.33.1.el6.x86_64 #1 SMP Tue Aug 25 15:29:40 UTC 2020 x86_64
+  MESSAGE: cu_has_single_call - call not found
+-----------------------------------------------------------------
+
+csi-xmelab - CSI: Cadence Support Investigation, recording details
+csi-xmelab - CSI: investigation complete took 0.000 secs, send this file to Cadence Support

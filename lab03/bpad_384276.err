@@ -1,0 +1,114 @@
+Operating system: Linux
+                  0.0.0 Linux 2.6.32-754.33.1.el6.x86_64 #1 SMP Tue Aug 25 15:29:40 UTC 2020 x86_64
+CPU: x86
+     GenuineIntel family 6 model 85 stepping 4
+     1 CPU
+
+GPU: UNKNOWN
+
+Crash reason:  DUMP_REQUESTED
+Crash address: 0xf75c58ab
+Process uptime: not available
+
+Thread 0 (crashed)
+ 0  libcbreakpad.so + 0x298ab
+    eip = 0xf75c58ab   esp = 0xffd4dad0   ebp = 0xffd4db58   ebx = 0xf75f6000
+    esi = 0xf75f6000   edi = 0xffd4dc08   eax = 0x00000000   ecx = 0x00000001
+    edx = 0x00000000   efl = 0x0da9375c
+    Found by: given as instruction pointer in context
+ 1  libcbreakpad.so + 0x27b74
+    eip = 0xf75c3b74   esp = 0xffd4db60   ebp = 0xffd4dca8
+    Found by: previous frame's frame pointer
+ 2  xmelab!vserror + 0xad
+    eip = 0x09b3330d   esp = 0xffd4dcb0   ebp = 0x0db605e0
+    Found by: previous frame's frame pointer
+ 3  xmelab!serror + 0x1a
+    eip = 0x09b3468a   esp = 0xffd4deb0   ebp = 0x0db605e0   ebx = 0x00000000
+    esi = 0xffd4df18   edi = 0x00000001
+    Found by: call frame info
+ 4  xmelab!cu_xsimple_function + 0x985
+    eip = 0x0886f115   esp = 0xffd4ded0   ebp = 0x0db605e0   ebx = 0x00000000
+    esi = 0xffd4df18   edi = 0x00000001
+    Found by: call frame info
+ 5  xmelab!cu_check_simple_function + 0x14
+    eip = 0x0886f644   esp = 0xffd4df60   ebp = 0x0db61d08   ebx = 0x0db61d08
+    esi = 0xf6ba8040   edi = 0xf6ba8040
+    Found by: call frame info
+ 6  xmelab!cu_xoptimize_function + 0x9a
+    eip = 0x087b57ca   esp = 0xffd4df80   ebp = 0x0db61d08   ebx = 0x0db61d08
+    esi = 0xf6ba8040   edi = 0xf6ba8040
+    Found by: call frame info
+ 7  xmelab!cu_xoptimize + 0xd49
+    eip = 0x087b69d9   esp = 0xffd4dfb0   ebp = 0x0db61d08   ebx = 0x00000000
+    esi = 0x00000000   edi = 0xf6ba8040
+    Found by: call frame info
+ 8  xmelab!cu_tlui_process_hierarchy.constprop.196 + 0x5ca
+    eip = 0x087d3f6a   esp = 0xffd4e010   ebp = 0x00000000   ebx = 0x0dacced0
+    esi = 0x00000001   edi = 0x00000000
+    Found by: call frame info
+ 9  xmelab!cu_tlui_common.constprop.161 + 0x44c
+    eip = 0x0881702c   esp = 0xffd4e4e0   ebp = 0xffd52618   ebx = 0x00000000
+    esi = 0x0daccf00   edi = 0x00000000
+    Found by: call frame info
+10  xmelab!cu_elaborate + 0x3d
+    eip = 0x088172ed   esp = 0xffd4e510   ebp = 0xffd52618   ebx = 0x0dac78e0
+    esi = 0x00000000   edi = 0x00000000
+    Found by: call frame info
+11  xmelab!process + 0x3015
+    eip = 0x0845b295   esp = 0xffd4e570   ebp = 0xffd52618   ebx = 0x0db0a630
+    esi = 0x0daa5c50   edi = 0x00000000
+    Found by: call frame info
+12  xmelab!xncmain + 0x16955
+    eip = 0x08475cd5   esp = 0xffd52620   ebp = 0xffd579f8   ebx = 0x00000000
+    esi = 0xffd58457   edi = 0x00000000
+    Found by: call frame info
+13  xmelab!main + 0x24
+    eip = 0x08351124   esp = 0xffd57a00   ebp = 0xffd57a18   ebx = 0x00d5dff4
+    esi = 0x00000000   edi = 0x00000000
+    Found by: call frame info
+14  libc-2.12.so + 0x16d28
+    eip = 0x00be1d28   esp = 0xffd57a20   ebp = 0xffd57aa8
+    Found by: previous frame's frame pointer
+15  xmelab!_start + 0x21
+    eip = 0x08351155   esp = 0xffd57ab0   ebp = 0x00000000
+    Found by: previous frame's frame pointer
+16  xmelab!_GLOBAL__sub_I_vpa_fix_portal_id + 0x30
+    eip = 0x08351100   esp = 0xffd57ab4   ebp = 0x00000000
+    Found by: stack scanning
+17  xmelab!__libc_csu_fini + 0x10
+    eip = 0x0a07bc20   esp = 0xffd57ac0   ebp = 0xffd57ad4
+    Found by: stack scanning
+18  0xffd583db
+    eip = 0xffd583db   esp = 0xffd57adc   ebp = 0xffd583d4
+    Found by: previous frame's frame pointer
+19  0x2d006261
+    eip = 0x2d006261   esp = 0xffd583dc   ebp = 0x6c656d78
+    Found by: previous frame's frame pointer
+
+Loaded modules:
+0x0025d000 - 0x00286fff  libm-2.12.so  ???
+0x00ba8000 - 0x00bc8fff  ld-2.12.so  ???
+0x00bcb000 - 0x00d5efff  libc-2.12.so  ???  (WARNING: No symbols, libc-2.12.so, 14A299164FF3FB44CC4C2710C0B49C3B0)
+0x00d64000 - 0x00d68fff  libdl-2.12.so  ???
+0x00d76000 - 0x00d8efff  libpthread-2.12.so  ???
+0x08048000 - 0x0b0a3fff  xmelab  ???  (main)
+0xf759c000 - 0xf75f7fff  libcbreakpad.so  ???  (WARNING: No symbols, libcbreakpad.so, E534BA7ACB58B2D1AC43D31B76D3ED460)
+0xf7601000 - 0xf761cfff  libgcc_s.so.1  ???
+0xf761e000 - 0xf7794fff  libstdc++.so.6.0.22  ???
+0xf77af000 - 0xf77affff  linux-gate.so  ???
+
+******BACKTRACE*****
+vserror [0x9b3330d]
+serror [0x9b3468a]
+cu_xsimple_function [0x886f115]
+cu_check_simple_function [0x886f644]
+cu_xoptimize_function [0x87b57ca]
+cu_xoptimize [0x87b69d9]
+cu_tlui_process_hierarchy.constprop.196 [0x87d3f6a]
+cu_tlui_common.constprop.161 [0x881702c]
+cu_elaborate [0x88172ed]
+process [0x845b295]
+xncmain [0x8475cd5]
+main [0x8351124]
+_start [0x8351155]
+******BACKTRACE END*****

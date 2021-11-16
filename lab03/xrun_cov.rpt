@@ -1,0 +1,29 @@
+*I,RUNLD: Successfully loaded run /home/student/wmrzyglod/VDIC/lab03/cov_work/scope/lab01.
+*I,MERGL1: Merging Simulation Coverage ...
+----------------------------
+*I,MERGL1: Preparing target model ...
+*I,MERGL1: Reading model of primary run (cov_work/scope/lab01) as initial model: cov_work/scope/icc_1c5c8140_782baee4.ucm
+*I,MERGL1: Target model generated successfully.
+*I,MERGL1: Projecting Simulation ucd data into the target model ...
+*I,MERGL2:   cov_work/scope/lab01:
+*I,MERGL3:       Data is projected in to the target model.
+*I,MERGL1: Writing output database cov_work/scope/merged_results:
+*I,MERGL2:   Model: cov_work/scope/merged_results/icc_1c5c8140_782baee4.ucm
+*I,MERGL2:   Data : cov_work/scope/merged_results/icc_1c5c8140_782baee4.ucd
+*I,MERGL1: No Specman coverage databases found in the runs.
+Total conflicts during target model creation: 0
+Total items not merged                      : 0
+Total runs not considered during target model creation: 0
+Total runs not merged                                 : 0
+*I,RUNLD: Successfully loaded run /home/student/wmrzyglod/VDIC/lab03/cov_work/scope/merged_results.
+*W,REPDEP: This is a legacy report and no future enhancement is planned for this report. It is recommended that you use the 'report_metrics' command and generate a dynamic report.
+name                                     Overall Average      Overall Covered      Code Average         Code Covered         Fsm Average          Fsm Covered          Functional Average   Functional Covered   
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+crc4                                     97.26%               94.53% (294/311)     97.26%               94.53% (294/311)     n/a                  n/a                  n/a                  n/a                  
+crc3                                     97.41%               94.85% (129/136)     97.41%               94.85% (129/136)     n/a                  n/a                  n/a                  n/a                  
+alu_tb                                   n/a                  n/a                  n/a                  n/a                  n/a                  n/a                  n/a                  n/a                  
+|--bfm                                   99.33%               99.45% (182/183/1)   99.33%               99.45% (182/183/1)   n/a                  n/a                  n/a                  n/a                  
+|--tester                                97.50%               97.53% (79/81/14)    97.50%               97.53% (79/81/14)    n/a                  n/a                  n/a                  n/a                  
+|--scoreboard                            99.33%               98.72% (231/234/14)  98.67%               98.71% (230/233/14)  n/a                  n/a                  100.00%              100.00% (1/1)        
+|--coverage                              100.00%              100.00% (39/39)      100.00%              100.00% (5/5)        n/a                  n/a                  100.00%              100.00% (34/34)      
+|--u_mtm_Alu                             98.21%               98.21% (55/56)       98.21%               98.21% (55/56)       n/a                  n/a                  n/a                  n/a                  
