@@ -1,8 +1,8 @@
-shape.sv
-rectangle.sv
-square.sv
-triangle.sv
-shape_factory.sv
-shape_reporter.sv
+shape.svh
+rectangle.svh
+square.svh
+triangle.svh
+shape_factory.svh
+shape_reporter.svh
 
 top.sv
