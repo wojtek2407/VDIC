@@ -1,0 +1,24 @@
+*I,RUNLD: Successfully loaded run /home/student/wmrzyglod/VDIC/lab04part2/cov_work/scope/lab01.
+*I,MERGL1: Merging Simulation Coverage ...
+----------------------------
+*I,MERGL1: Preparing target model ...
+*I,MERGL1: Reading model of primary run (cov_work/scope/lab01) as initial model: cov_work/scope/icc_4602b4ea_412f2499.ucm
+*I,MERGL1: Target model generated successfully.
+*I,MERGL1: Projecting Simulation ucd data into the target model ...
+*I,MERGL2:   cov_work/scope/lab01:
+*I,MERGL3:       Data is projected in to the target model.
+*I,MERGL1: Writing output database cov_work/scope/merged_results:
+*I,MERGL2:   Model: cov_work/scope/merged_results/icc_4602b4ea_412f2499.ucm
+*I,MERGL2:   Data : cov_work/scope/merged_results/icc_4602b4ea_412f2499.ucd
+*I,MERGL1: No Specman coverage databases found in the runs.
+Total conflicts during target model creation: 0
+Total items not merged                      : 0
+Total runs not considered during target model creation: 0
+Total runs not merged                                 : 0
+*I,RUNLD: Successfully loaded run /home/student/wmrzyglod/VDIC/lab04part2/cov_work/scope/merged_results.
+*W,REPDEP: This is a legacy report and no future enhancement is planned for this report. It is recommended that you use the 'report_metrics' command and generate a dynamic report.
+name                                     Overall Average      Overall Covered      Code Average         Code Covered         Fsm Average          Fsm Covered          Functional Average   Functional Covered   
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+top                                      100.00%              100.00% (35/35)      100.00%              100.00% (1/1)        n/a                  n/a                  100.00%              100.00% (34/34)      
+|--bfm                                   97.58%               96.36% (476/494/1)   97.58%               96.36% (476/494/1)   n/a                  n/a                  n/a                  n/a                  
+|--u_mtm_Alu                             98.21%               98.21% (55/56)       98.21%               98.21% (55/56)       n/a                  n/a                  n/a                  n/a                  
