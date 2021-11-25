@@ -1,8 +1,8 @@
 class scoreboard;
     
     virtual alu_bfm bfm;   
-    string test_result = "PASSED";   
-    queue_element_t e;
+    protected string test_result = "PASSED";   
+    protected queue_element_t e;
     
     function new (virtual alu_bfm b);
         bfm = b;
