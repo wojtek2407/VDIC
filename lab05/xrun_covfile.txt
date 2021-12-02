@@ -1,0 +1,12 @@
+# INCISIVE 15.2
+
+# enable Constant Object Marking
+set_com -on -log
+
+set_branch_scoring
+set_expr_scoring -control *
+set_expr_coverable_operators -all -event_or
+set_expr_coverable_statements -all
+
+set_toggle_scoring -sv_enum
+set_covergroup -new_instance_reporting -per_instance_default_one
