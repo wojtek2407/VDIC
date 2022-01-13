@@ -15,13 +15,14 @@ class sequence_item extends uvm_sequence_item;
     rand bit insert_data_frame_error;
     rand bit second_execution;
     rand bit insert_data_bit_error;
-    rand bit err;
-    rand bit signed [31:0] C;
-    rand bit [3:0] flags;
-    rand bit [2:0] crc;
-    rand bit [5:0] err_flags;
-    rand bit parity;
     rand operation_t op_set;
+    
+    bit err;
+    bit signed [31:0] C;
+    bit [3:0] flags;
+    bit [2:0] crc;
+    bit [5:0] err_flags;
+    bit parity;
 
 //------------------------------------------------------------------------------
 // Macros providing copy, compare, pack, record, print functions.
