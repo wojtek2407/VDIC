@@ -8,7 +8,7 @@ class scoreboard extends uvm_subscriber#(result_transaction);
     } test_result;
     protected test_result tr = TEST_PASSED;
     
-    uvm_tlm_analysis_fifo #(command_transaction) cmd_f;
+    uvm_tlm_analysis_fifo #(sequence_item) cmd_f;
     virtual alu_bfm bfm;
     
     function new (string name, uvm_component parent);
@@ -45,14 +45,15 @@ class scoreboard extends uvm_subscriber#(result_transaction);
     
     function void write(result_transaction t);
         string data_str;
-        command_transaction cmd;
+        sequence_item cmd;
         result_transaction predicted;
         
         if (!cmd_f.try_get(cmd)) $fatal(1, "Missing command in self checker");
+        
         predicted = new("predicted");
-        predicted.result = cmd.e;
-        predicted.result.C = get_expected_result(cmd.e.A, cmd.e.B, cmd.e.op_set);
-        predicted.result.flags = get_expected_flags(cmd.e.A, cmd.e.B, cmd.e.op_set);
+        predicted = t;
+        predicted.result.C = get_expected_result(cmd.A, cmd.B, cmd.op_set);
+        predicted.result.flags = get_expected_flags(cmd.A, cmd.B, cmd.op_set);
         predicted.result.crc = nextCRC3_D37({predicted.result.C, 1'b0, predicted.result.flags}, 3'b0);
 
         data_str  = { cmd.convert2string(),

@@ -78,23 +78,18 @@ package alu_pkg;
     endfunction
     
     `include "sequence_item.svh"
-    `include "add_sequence_item.svh"
-    
+    `include "random_sequence.svh"
+    `include "minmax_sequence.svh"
     `include "result_transaction.svh"
-    
     `include "sequencer.svh"
-
-    `include "command_transaction.svh"
-    `include "add_transaction.svh"
     `include "command_monitor.svh"
     `include "driver.svh"
     `include "result_monitor.svh"
     `include "coverage.svh"
     `include "scoreboard.svh"
-    `include "tester.svh"
     `include "env.svh"
+    `include "alu_base_test.svh"
     `include "random_test.svh"
-    `include "add_test.svh"
     `include "minmax_test.svh"
     
 endpackage : alu_pkg

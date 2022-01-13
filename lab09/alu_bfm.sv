@@ -8,28 +8,27 @@ interface alu_bfm;
     wire               sout;
     bit                clk;
     bit                rst_n;
-    
 
     command_monitor command_monitor_h;  
     result_monitor result_monitor_h; 
       
-    task enqueue_element(input command_transaction e);
+    task enqueue_element(sequence_item e);
         result_transaction r_temp;      
-        queue_element_t e_temp;
         r_temp = new("r_temp");
         reset_alu();
-        e_temp = e.e;
         command_monitor_h.write_to_monitor(e);
-        if (e_temp.reset_alu_before) reset_alu();
-        ALU_send(e_temp.A, e_temp.B, e_temp.op_set, e_temp.insert_crc_error, e_temp.insert_data_bit_error, e_temp.insert_data_frame_error);
-        ALU_receive(r_temp.result.err, r_temp.result.C, r_temp.result.flags, r_temp.result.crc, r_temp.result.err_flags, r_temp.result.parity);
-        if (e_temp.second_execution) begin
-            ALU_send(e_temp.A, e_temp.B, e_temp.op_set, e_temp.insert_crc_error, e_temp.insert_data_bit_error, e_temp.insert_data_frame_error);
-            ALU_receive(r_temp.result.err, r_temp.result.C, r_temp.result.flags, r_temp.result.crc, r_temp.result.err_flags, r_temp.result.parity);
+        if (e.reset_alu_before) reset_alu();
+        ALU_send(e.A, e.B, e.op_set, e.insert_crc_error, e.insert_data_bit_error, e.insert_data_frame_error);
+        ALU_receive(e.err, e.C, e.flags, e.crc, e.err_flags, e.parity);
+        if (e.second_execution) begin
+            ALU_send(e.A, e.B, e.op_set, e.insert_crc_error, e.insert_data_bit_error, e.insert_data_frame_error);
+            ALU_receive(e.err, e.C, e.flags, e.crc, e.err_flags, e.parity);
         end
-        if (e_temp.reset_alu_after) reset_alu();
+        if (e.reset_alu_after) reset_alu();
+        r_temp = seq_to_tr(e);
         result_monitor_h.write_to_monitor(r_temp);
     endtask
+
     
     //------------------------------------------------------------------------------
     // Clock generator
@@ -164,5 +163,22 @@ interface alu_bfm;
         nextCRC4_D68 = newcrc;
       end
       endfunction
+      
+          
+        
+    function result_transaction seq_to_tr(input sequence_item s);
+        begin
+            seq_to_tr = new();
+            seq_to_tr.result.A = s.A;
+            seq_to_tr.result.B = s.B;
+            seq_to_tr.result.op_set = s.op_set;
+            seq_to_tr.result.insert_crc_error = s.insert_crc_error;
+            seq_to_tr.result.reset_alu_before = s.reset_alu_before;
+            seq_to_tr.result.reset_alu_after = s.reset_alu_after;
+            seq_to_tr.result.insert_data_frame_error = s.insert_data_frame_error;
+            seq_to_tr.result.second_execution = s.second_execution;
+            seq_to_tr.result.insert_data_bit_error = s.insert_data_bit_error;
+        end
+    endfunction 
 
 endinterface : alu_bfm

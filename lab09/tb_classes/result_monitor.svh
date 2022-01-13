@@ -14,9 +14,12 @@ class result_monitor extends uvm_component;
     function void build_phase(uvm_phase phase);
         if(!uvm_config_db #(virtual alu_bfm)::get(null, "*","bfm", bfm))
             $fatal(1, "Failed to get BFM");
-        bfm.result_monitor_h = this;
         ap                   = new("ap",this);
     endfunction : build_phase
+    
+    function void connect_phase(uvm_phase phase);
+        bfm.result_monitor_h = this;
+    endfunction : connect_phase
 
     function new (string name, uvm_component parent);
         super.new(name, parent);

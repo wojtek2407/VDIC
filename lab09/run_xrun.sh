@@ -16,7 +16,7 @@
 
 #------------------------------------------------------------------------------
 # The list of tests; in GUI mode only the first test is started.
-TESTS=(random_test add_test);
+TESTS=(random_test minmax_test);
 #------------------------------------------------------------------------------
 # Default .f file
 FFILE="tb.f"
@@ -41,6 +41,10 @@ DEBUG=""
 RUN_IMC=""
 start_time=0
 time_report=""
+# PASSED="PASSED"
+# FAILED="FAILED"
+PASSED="\033[1;30m\033[102m-OK-\033[0m"
+FAILED="\033[1;30m\033[101m-FAILED-\033[0m"
 #>>>
 #------------------------------------------------------------------------------
 # check input script arguments and env#<<<
@@ -118,10 +122,10 @@ function xrun_check_status() { #<<<
   action=$2
 
   if [[ "$status" != "0" ]]; then
-    echo "$action failed with status $status".
+    echo -e "$action $FAILED with status $status".
     exit -1
   fi
-  echo "$action finished with status 0 (PASSED)."
+  echo -e "$action finished with status 0 ($PASSED)."
   return 0
 } #>>>
 #------------------------------------------------------------------------------
@@ -166,6 +170,7 @@ function xrun_run_all_tests() { #<<<
         $COV_TEST \
         +UVM_TESTNAME=$TEST \
         -l xrun_test_$TEST.log
+      check_uvm_fatal "xrun_test_$TEST.log"
       xrun_check_status $? "Test $TEST"
     done
 
@@ -214,6 +219,17 @@ function time_meas_report { #<<<
   echo -n "Time measurement results:"
   echo "$time_report"
   echo $separator
+} #>>>
+#------------------------------------------------------------------------------
+function check_uvm_fatal() { #<<<
+# check for the UVM_FATAL in the given log file
+# args: string - log file name
+  logfile=$1
+  echo "CHECKING LOG FILE: $logfile"
+  if [[ $(egrep  -c "^UVM_FATAL *: *[123456789]" $logfile) != "0" ]]; then
+    echo -e "Simulation $FAILED with UVM_FATAL";
+    exit -1
+  fi
 } #>>>
 #------------------------------------------------------------------------------
 # run the main

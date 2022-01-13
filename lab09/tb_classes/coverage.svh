@@ -1,22 +1,30 @@
-class coverage extends uvm_subscriber#(command_transaction);
+class coverage extends uvm_subscriber#(sequence_item);
     
     `uvm_component_utils(coverage)
-    queue_element_t e_temp;
+    local bit [31:0]  A;
+    local bit [31:0]  B;
+    local bit insert_crc_error;
+    local bit reset_alu_before;
+    local bit reset_alu_after;
+    local bit insert_data_frame_error;
+    local bit second_execution;
+    local bit insert_data_bit_error;
+    local operation_t op_set;
 
     covergroup op_cov;
     
         option.name = "cg_op_cov";
     
-        cp_op_set : coverpoint e_temp.op_set {
+        cp_op_set : coverpoint op_set {
             // #A1 test all operations
             bins A1_all_ops = {alu_pkg::and_op,alu_pkg::or_op,alu_pkg::add_op,alu_pkg::sub_op};
         }
         
-        cp_reset_before : coverpoint e_temp.reset_alu_before {
+        cp_reset_before : coverpoint reset_alu_before {
             bins reset_before = {1'b1};
         }
         
-        cp_reset_after : coverpoint e_temp.reset_alu_after {
+        cp_reset_after : coverpoint reset_alu_after {
             bins reset_after = {1'b1};
         }
         
@@ -36,7 +44,7 @@ class coverage extends uvm_subscriber#(command_transaction);
 
         }
        
-        cp_two_op : coverpoint e_temp.op_set {
+        cp_two_op : coverpoint op_set {
             // #A4 two operations in row
             bins A4_twoops = ([alu_pkg::and_op:alu_pkg::sub_op] [*2]);
         }
@@ -48,22 +56,22 @@ class coverage extends uvm_subscriber#(command_transaction);
         option.name = "cg_errors_cov";  
         
         // #B1 Bad OP code error insertion
-        coverpoint e_temp.op_set {
+        coverpoint op_set {
             bins B1_bad_op = {alu_pkg::bad_op1,alu_pkg::bad_op2,alu_pkg::bad_op3,alu_pkg::bad_op4};
         }
         
         // #B2 CRC bit error insertion
-        coverpoint e_temp.insert_crc_error {
+        coverpoint insert_crc_error {
             bins B2_crc_bit_error = {1'b1};
         }
         
         // #B3 Data bit error insertion
-        coverpoint e_temp.insert_data_bit_error {
+        coverpoint insert_data_bit_error {
             bins B3_data_bit_error = {1'b1};
         }
         
         // #B4 Data bit error insertion
-        coverpoint e_temp.insert_data_frame_error {
+        coverpoint insert_data_frame_error {
             bins B4_data_frame_error = {1'b1};
         }
         
@@ -73,16 +81,16 @@ class coverage extends uvm_subscriber#(command_transaction);
         
         option.name = "cg_min_max_cov";  
         
-        all_ops : coverpoint e_temp.op_set {
+        all_ops : coverpoint op_set {
             ignore_bins null_ops = {alu_pkg::bad_op1,alu_pkg::bad_op2,alu_pkg::bad_op3,alu_pkg::bad_op4};
         }
         
-        a_leg : coverpoint e_temp.A {
+        a_leg : coverpoint A {
             bins zeros = {'h00000000};
             bins others = {['h1:'hfffffffe]};
             bins ones  = {'hffffffff};
         }
-        b_leg : coverpoint e_temp.B {
+        b_leg : coverpoint B {
             bins zeros = {'h00000000};
             bins others = {['h1:'hfffffffe]};
             bins ones  = {'hffffffff};
@@ -115,8 +123,16 @@ class coverage extends uvm_subscriber#(command_transaction);
     endfunction : new
     
     
-    function void write(command_transaction t);
-        e_temp = t.e;
+    function void write(sequence_item t);
+        A = t.A;
+        B = t.B;
+        op_set = t.op_set;
+        insert_crc_error = t.insert_crc_error;
+        reset_alu_before = t.reset_alu_before;
+        reset_alu_after = t.reset_alu_after;
+        insert_data_frame_error = t.insert_data_frame_error;
+        second_execution = t.second_execution;
+        insert_data_bit_error = t.insert_data_bit_error;
         op_cov.sample();
         errors_cov.sample();
         min_max_cov.sample();

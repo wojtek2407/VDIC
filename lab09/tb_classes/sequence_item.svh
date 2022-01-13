@@ -21,7 +21,7 @@ class sequence_item extends uvm_sequence_item;
     rand bit [2:0] crc;
     rand bit [5:0] err_flags;
     rand bit parity;
-    operation_t op_set;
+    rand operation_t op_set;
 
 //------------------------------------------------------------------------------
 // Macros providing copy, compare, pack, record, print functions.
@@ -46,7 +46,7 @@ class sequence_item extends uvm_sequence_item;
         `uvm_field_int(crc, UVM_ALL_ON | UVM_BIN)
         `uvm_field_int(err_flags, UVM_ALL_ON | UVM_BIN)
         `uvm_field_int(parity, UVM_ALL_ON | UVM_BIN)
-        `uvm_field_enum(operation_t, op_set, UVM_ALL_ON)
+        `uvm_field_enum(operation_t, op_set, UVM_ALL_ON | UVM_BIN)
     `uvm_object_utils_end
 
 //------------------------------------------------------------------------------
