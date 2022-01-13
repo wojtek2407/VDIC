@@ -19,8 +19,8 @@ class minmax_sequence extends uvm_sequence #(sequence_item);
         `uvm_create(req);
 
         repeat (N_TESTS) begin : random_loop
-        `uvm_do_with(req, {A dist {32'h0 := 1, 32'hFFFF_FFFF := 1};
-                           B dist {32'h0 := 1, 32'hFFFF_FFFF := 1};})
+        `uvm_rand_send_with(req, {A dist {32'h0 := 1, 32'hFFFF_FFFF := 1};
+                                  B dist {32'h0 := 1, 32'hFFFF_FFFF := 1};})
         end : random_loop
     endtask : body
 
